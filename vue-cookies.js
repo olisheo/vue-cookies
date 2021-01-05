@@ -18,9 +18,9 @@
 
   var VueCookies = {
     // install of Vue
-    install: function (Vue) {
-      Vue.prototype.$cookies = this;
-      Vue.$cookies = this;
+    install: function (app) {
+      app.config.globalProperties.$cookies = this;
+      app.$cookies = this;
     },
     config: function (expireTimes, path, domain, secure, sameSite) {
       defaultConfig.expires = expireTimes ? expireTimes : '1d';
